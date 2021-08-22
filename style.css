@@ -19,13 +19,18 @@ body{
     align-items:center;
     justify-content: space-evenly;
     height:80vh;
-    width:25%;
+    width:54vh;
     background-color: lightblue;
     border: lightcoral solid 7px;
     border-radius: 10px;
     flex-direction: column;
     
 
+}
+@media screen and (max-width: 600px) {
+    #container{
+        width: 80%;
+    }
 }
 #display{
     background-color:lightgreen;

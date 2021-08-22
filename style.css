@@ -19,7 +19,7 @@ body{
     align-items:center;
     justify-content: space-evenly;
     height:80vh;
-    width: 60vh;
+    width: 28vw;
     background-color: lightblue;
     border: lightcoral solid 7px;
     border-radius: 10px;
@@ -41,7 +41,7 @@ body{
 #buttonContainer{
     display: grid;
     height: 50vh;
-    width: 50vh;
+    width:90%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-gap: 10px;

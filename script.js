@@ -29,12 +29,11 @@ function setOperator() {
     operatorButtons.forEach((item) => {
         item.addEventListener("click", function () {
             let str = previousDisplay.textContent.charAt(previousDisplay.textContent.length - 1);
-            console.log(displayValue);
             if (str == "+" || str == "-" || str == "÷" || str == "x") {
-                if(currentDisplay.textContent==""){
+                if (currentDisplay.textContent == "") {
                     return;
                 }
-        
+
             }
             operate(item.value);
 
@@ -44,24 +43,29 @@ function setOperator() {
     });
 }
 function operate(input) {
-   
-    let previousOperator = currentOperator;
 
+    let previousOperator = currentOperator;
 
     if (previousOperator == "+") {
         currentNumber += displayValue;
     } else if (previousOperator == "-") {
         currentNumber -= displayValue;
     } else if (previousOperator == "x") {
-        currentNumber *= displayValue;
+        if (displayValue != 0) {
+            currentNumber *= displayValue;
+        }
 
     } else if (previousOperator == "÷") {
-        currentNumber /= displayValue;
+        if (displayValue != 0) {
+            currentNumber /= displayValue;
+        }
 
     } else {
         currentNumber = displayValue;
 
     }
+    console.log(currentNumber);
+
     currentOperator = input;
     previousDisplay.textContent += currentDisplay.textContent + input;
     currentDisplay.textContent = "";
@@ -77,15 +81,15 @@ function solution() {
         currentDisplay.textContent = "";
         previousDisplay.textContent = "";
         currentDisplay.textContent = sum;
-        previousDisplay
         currentNumber = sum;
+        console.log(currentNumber);
         displayValue = 0;
 
 
 
 
     } else if (currentOperator == "-") {
-        sum = currentNumber - displayValue;;
+        sum = currentNumber - displayValue;
         currentDisplay.textContent = "";
         previousDisplay.textContent = "";
         currentDisplay.textContent = sum;
@@ -95,7 +99,7 @@ function solution() {
 
 
     } else if (currentOperator == "x") {
-        sum = currentNumber * displayValue;;
+        sum = currentNumber * displayValue;
         currentDisplay.textContent = "";
         previousDisplay.textContent = "";
         currentDisplay.textContent = sum;
@@ -105,7 +109,7 @@ function solution() {
 
 
     } else if (currentOperator == "÷") {
-        sum = currentNumber / displayValue;
+        sum = (currentNumber / displayValue);
         currentDisplay.textContent = "";
         previousDisplay.textContent = "";
         currentDisplay.textContent = sum;
@@ -145,6 +149,7 @@ function display(input) {
 
     currentDisplay.textContent += "" + input;
     displayValue = Number(currentDisplay.textContent);
+    console.log(displayValue);
 
 
 }

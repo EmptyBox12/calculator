@@ -64,7 +64,7 @@ function operate(input) {
         currentNumber = displayValue;
 
     }
-    console.log(currentNumber);
+    
 
     currentOperator = input;
     previousDisplay.textContent += currentDisplay.textContent + input;
@@ -82,7 +82,6 @@ function solution() {
         previousDisplay.textContent = "";
         currentDisplay.textContent = sum;
         currentNumber = sum;
-        console.log(currentNumber);
         displayValue = 0;
 
 
@@ -149,8 +148,7 @@ function display(input) {
 
     currentDisplay.textContent += "" + input;
     displayValue = Number(currentDisplay.textContent);
-    console.log(displayValue);
-
+    
 
 }
 setNumber();

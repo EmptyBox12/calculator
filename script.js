@@ -118,7 +118,7 @@ function solution() {
 
     }
 
-    ;
+    
 
 }
 function erase() {

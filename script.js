@@ -15,7 +15,7 @@ clearButton.addEventListener("click", clear);
 
 function clear() {
     displayValue = 0;
-    currentNumber = 0; displayValue = 0;
+    currentNumber = 0; 
     currentNumber = 0;
     previousNumber = 0;
     currentOperator = "";
@@ -124,8 +124,14 @@ function solution() {
 function erase() {
     const eraseButton = document.querySelector("[data-erase]");
     eraseButton.addEventListener("click", () => {
+        if(currentNumber == Number(currentDisplay.textContent)){
+            currentDisplay.textContent = currentDisplay.textContent.slice(0, -1);
+            currentNumber = Number(currentDisplay.textContent);
+
+        } else{
         currentDisplay.textContent = currentDisplay.textContent.slice(0, -1);
         displayValue = Number(currentDisplay.textContent);
+        }
 
     });
 

@@ -122,7 +122,7 @@ function solution() {
 
 }
 function erase() {
-    const eraseButton = document.querySelector("[data-erase");
+    const eraseButton = document.querySelector("[data-erase]");
     eraseButton.addEventListener("click", () => {
         currentDisplay.textContent = currentDisplay.textContent.slice(0, -1);
     });
